@@ -13,9 +13,9 @@ importers:
 
   .:
     dependencies:
-      '@samual/types':
-        specifier: ^0.0.2
-        version: 0.0.2
+      '@samual/automap':
+        specifier: ^0.0.0
+        version: 0.0.0
     devDependencies:
       '@babel/plugin-syntax-typescript':
         specifier: ^7.28.6
@@ -1443,6 +1443,10 @@ packages:
 
   '@samual/assert@0.0.1':
     resolution: {integrity: sha512-cspA34Z+N+pfq1jTnk+p9/qYj2+sdxI2QNijuF40U+yyRT7D33dX1H+tM0XS+B8se1JTxhJhMHQa2nt5k+hosw==}
+    engines: {node: ^20.10 || ^22 || >=24}
+
+  '@samual/automap@0.0.0':
+    resolution: {integrity: sha512-Xku4jWIYJk8EcPtKFRzwRjftmqumA61dLqJHjIJET4ooW74F64EJwwtDUjXAiM6ICdmbOJFWNtzEpZdCqBvbaQ==}
     engines: {node: ^20.10 || ^22 || >=24}
 
   '@samual/rolldown-config@0.0.1-fcd4cc3':
@@ -3314,6 +3318,8 @@ snapshots:
   '@samual/assert@0.0.1':
     dependencies:
       '@samual/types': 0.0.2
+
+  '@samual/automap@0.0.0': {}
 
   '@samual/rolldown-config@0.0.1-fcd4cc3(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@types/babel__core@7.20.5)(oxc-resolver@11.19.1(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1))(rollup@4.60.0)(typescript@5.9.3)':
     dependencies:

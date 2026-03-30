@@ -13,7 +13,7 @@
 	"repository": "github:samualtnorman/typescript-template",
 	"type": "module",
 	"dependencies": {
-		"@samual/types": "^0.0.2"
+		"@samual/automap": "^0.0.0"
 	},
 	"devDependencies": {
 		"@babel/plugin-syntax-typescript": "^7.28.6",

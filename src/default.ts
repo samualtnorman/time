@@ -1,11 +1,30 @@
-import type { JsonValue } from "@samual/types"
+import { AutoMap } from "@samual/automap"
+import { styleText } from "util"
 
-export const foo: JsonValue = `bar`
+const nameIdMap = new AutoMap((_name: string) => 0)
 
-if (import.meta.vitest) {
-	const { test, expect } = import.meta.vitest
+export const time = <T>(name: string, fn: () => T): T => {
+	const id = nameIdMap.get(name)
 
-	test(`add 1 and 1`, () => {
-		expect(1 + 1).toBe(2)
-	})
+	nameIdMap.set(name, id + 1)
+
+	if (id)
+		name = `${name} (${id})`
+
+	console.log(styleText(`gray`, `Measuring ${name}`))
+	console.time(name)
+
+	let isPromise = false
+
+	try {
+		const result = fn()
+
+		if (isPromise = result instanceof Promise)
+			result.finally(() => console.timeEnd(name))
+
+		return result
+	} finally {
+		if (!isPromise)
+			console.timeEnd(name)
+	}
 }
